@@ -6,11 +6,12 @@ perl6:
     - latest
 
 install:
+    - mkdir resources
+    - sudo apt-get install libpam0g-dev
     - rakudobrew build-panda
     - panda installdeps .
-    - sudo apt-get install libpam0g-dev
     - cd src && perl6 Configure.pl6 && make && cd ..
-    - mkdir resources
-    - cp lib/Auth/PAM/libauthpamsimple.so resources
+    - ln lib/Auth/PAM/libauthpamsimple.so resources/
     - ls -l
     - ls -l resources
+    - pwd
