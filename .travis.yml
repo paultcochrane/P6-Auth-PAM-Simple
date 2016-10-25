@@ -1,0 +1,14 @@
+sudo: required
+
+language: perl6
+
+perl6:
+    - latest
+
+install:
+    - rakudobrew build-panda
+    - panda installdeps .
+    - sudo apt-get install install libpam0g-dev
+    - cd src && perl6 Configure.pl6 && make && cd ..
+    - mkdir resources
+    - cp lib/Auth/PAM/libauthpamsimple.so resources
