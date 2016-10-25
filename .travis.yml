@@ -7,7 +7,7 @@ perl6:
 
 install:
     - mkdir resources
-    - sudo apt-get install libpam0g-dev
+    - sudo apt-get install libpam0g-dev libpam-runtime
     - rakudobrew build-panda
     - panda installdeps .
     - cd src && perl6 Configure.pl6 && make && cd ..
