@@ -12,3 +12,5 @@ install:
     - cd src && perl6 Configure.pl6 && make && cd ..
     - mkdir resources
     - cp lib/Auth/PAM/libauthpamsimple.so resources
+    - ls -l
+    - ls -l resources
