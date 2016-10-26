@@ -8,7 +8,8 @@ perl6:
 install:
     - rakudobrew build-panda
     - panda installdeps .
-    - sudo aptitude -y install libpam-dev
+    - sudo aptitude -y install libpam libpam-dev
+    - aptitude search libpam
     - cd src && perl6 Configure.pl6 && make && cd ..
     - mkdir resources
     - ln lib/Auth/PAM/libauthpamsimple.so resources/
