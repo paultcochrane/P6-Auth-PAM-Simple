@@ -12,5 +12,6 @@ install:
     - aptitude search libpam
     - cd src && perl6 Configure.pl6 && make && cd ..
     - mkdir resources
-    - ln lib/Auth/PAM/libauthpamsimple.so resources/
+    - cp lib/Auth/PAM/libauthpamsimple.so resources/
     - nm resources/libauthpamsimple.so
+    - objdump -tT /lib/x86_64-linux-gnu/libpam.so.0*
